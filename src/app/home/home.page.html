@@ -1,7 +1,35 @@
 <ion-content class="home-background" [fullscreen]="true">
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer"
-        href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div #country class="container-fluid country">
+    <div class="wrapper-arrow">
+      <svg version="1.1" class="arrow" id="arrow" fill="none" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2000 2000" xml:space="preserve">
+        <path d="M1801.1,144c-534.3,282.9-1068.7,565.8-1603,848.7c261.9,21,523.9,41.9,785.8,62.9
+     c21,293.4,41.9,586.7,62.9,880.1C1298.2,1338.4,1549.6,741.2,1801.1,144z" />
+      </svg>
+    </div>
+    <div class="wrapper-country">
+      <div class="title">Malaysia</div>
+      <div class="last-updated">Last updated 5m ago</div>
+    </div>
+  </div>
+  <div #temperature class="container-fluid temperature">
+    <div class="wrapper-temperature">
+      <div class="celcius">29° C</div>
+      <div class="celcius-details">Clouds 31 / 28 ° C</div>
+    </div>
+    <div class="wrapper-cloud">
+      <img src="assets/icon/cloud-plain.svg" alt="">
+    </div>
+  </div>
+  <div #weather class="slider-wrapper">
+    <ion-slides [options]="slideOptions">
+      <ion-slide *ngFor="let weatherWeekList of weatherWeekLists;">
+        <ion-thumbnail>
+          <ion-label color="light">{{ weatherWeekList?.date | formatDateToWeekday}}</ion-label>
+          <app-image-shell [size]="'cover'" [src]="weatherWeekList?.icon" [alt]="''"></app-image-shell>
+          <ion-label color="light">{{ weatherWeekList?.weather_state }}</ion-label>
+        </ion-thumbnail>
+      </ion-slide>
+    </ion-slides>
   </div>
 </ion-content>

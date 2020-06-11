@@ -1,0 +1,125 @@
+:host {
+  --image-shell-loading-background: rgba(#cccccc, 0.25);
+  --image-shell-overlay-background: rgba(#000000, 0.4);
+  --image-shell-spinner-size: 28px;
+  --image-shell-spinner-color: #ffffff;
+  --image-shell-border-radius: 0px;
+
+  display: block;
+  position: relative;
+  height: 100%;
+  border-radius: var(--image-shell-border-radius);
+  transition: all ease-in-out 0.3s;
+  // z-index: 2;
+
+  // By default, hide the spinner
+  & > .spinner {
+    display: none;
+  }
+
+  // Loading background
+  &::before {
+    content: "";
+    background: var(--image-shell-loading-background);
+    border-radius: var(--image-shell-border-radius);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  &:not([mode="cover"]) {
+    width: 100%;
+    overflow: hidden;
+
+    & > .inner-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: visibility 0s linear, opacity 0.5s linear;
+      opacity: 0;
+      visibility: hidden;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--image-shell-border-radius);
+      // z-index: -1;
+    }
+
+    &.img-loaded {
+      // Hide loading background once the image has loaded
+      &::before {
+        display: none;
+      }
+
+      & > .inner-img {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  // If it is mode: cover
+  &[mode="cover"] {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    & > .inner-img {
+      display: none;
+      visibility: hidden;
+    }
+
+    &.img-loaded {
+      // Hide loading background once the image has loaded
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+:host(.add-spinner) {
+  & > .spinner {
+    display: block;
+    position: absolute;
+    top: calc(50% - calc(var(--image-shell-spinner-size) / 2));
+    left: calc(50% - calc(var(--image-shell-spinner-size) / 2));
+    width: var(--image-shell-spinner-size);
+    height: var(--image-shell-spinner-size);
+    font-size: var(--image-shell-spinner-size);
+    line-height: var(--image-shell-spinner-size);
+    color: var(--image-shell-spinner-color);
+    z-index: -1;
+  }
+
+  &.img-loaded {
+    & > .spinner {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
+
+:host(.add-overlay) {
+  &.img-loaded {
+    // Add background overlay after the image has loaded
+    &::before {
+      display: block;
+      background-color: var(--image-shell-overlay-background);
+    }
+  }
+}
+
+:host(.add-text-sidebar) {
+  img:before {
+    background: red;
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    left: 3px;
+    top: 3px;
+    border-radius: 0 0 4px;
+    z-index: 2;
+  }
+}
