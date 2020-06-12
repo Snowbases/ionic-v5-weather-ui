@@ -15,23 +15,45 @@ ion-content {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        margin: 0.4em;
 
-        svg.arrow {
-          width: 10vw;
-          height: 10vw;
+        ion-button {
+          --background: transparent;
+          --background-activated: transparent;
+          --background-activated-opacity: 1;
+          --background-focused: rgb(200, 200, 200);
+          --background-focused-opacity: 0.1;
+          --background-hover: rgb(200, 200, 200);
+          --background-hover-opacity: 0.1;
+          --padding-start: 0.5em;
+          --padding-end: 0.5em;
+          --border-width: 1px;
+          --border-radius: 100%;
+          --border-style: solid;
+          --border-color: transparent;
+          margin: 0;
+          width: 15vw;
+          height: 15vw;
 
-          & > path {
-            fill: var(--icon-color);
+          svg.arrow {
+            width: 10vw;
+            height: 10vw;
+            margin: auto;
+
+            & > path {
+              fill: var(--icon-color);
+            }
           }
         }
       }
 
       .wrapper-country {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         padding-left: 0.5em;
 
         .title {
-          font-family: "Nunito";
+          font-family: "Nunito Sans";
           font-style: normal;
           font-weight: normal;
           font-size: 6vw;
@@ -40,7 +62,7 @@ ion-content {
         }
 
         .last-updated {
-          font-family: "Nunito";
+          font-family: "Nunito Sans";
           font-style: normal;
           font-weight: normal;
           font-size: 4.5vw;
@@ -61,7 +83,7 @@ ion-content {
         width: 50vw;
 
         .celcius {
-          font-family: "Nunito";
+          font-family: "Nunito Sans";
           font-style: normal;
           font-weight: normal;
           font-size: 14vw;
@@ -70,7 +92,7 @@ ion-content {
         }
 
         .celcius-details {
-          font-family: "Nunito";
+          font-family: "Nunito Sans";
           font-style: normal;
           font-weight: normal;
           font-size: 5vw;
@@ -95,24 +117,24 @@ ion-content {
 
   .slider-wrapper {
     position: absolute;
-    bottom: 15vh;
     width: 100%;
+    bottom: 5vh;
 
     ion-slides {
       width: 100%;
-      height: 100%;
-      padding: 5%;
+      padding: 2% 5%;
       margin: auto;
 
       ion-slide {
         padding: 8px;
+        margin: auto;
 
         ion-thumbnail {
           display: flex;
           flex-direction: column;
           justify-content: center;
           width: 15vw;
-          height: 15vh;
+          height: 20vw;
 
           app-image-shell {
             background: transparent;
@@ -125,6 +147,52 @@ ion-content {
             font-size: 4vw;
             color: var(--font-color);
             overflow-wrap: normal;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+
+      ion-button {
+        --background: transparent;
+        --background-activated: transparent;
+        --background-activated-opacity: 1;
+        --background-focused: rgb(200, 200, 200);
+        --background-focused-opacity: 0.1;
+        --background-hover: rgb(200, 200, 200);
+        --background-hover-opacity: 0.1;
+        --padding-start: 0.5em;
+        --padding-end: 0.5em;
+        --border-width: 1px;
+        --border-radius: 100%;
+        --border-style: solid;
+        --border-color: transparent;
+        margin: 0.7em;
+        width: 15vw;
+        height: 15vw;
+
+        svg.factory {
+          width: 10vw;
+          height: 10vw;
+          margin: auto;
+
+          & > path {
+            fill: var(--icon-color);
+          }
+        }
+
+        svg.settings {
+          width: 10vw;
+          height: 10vw;
+          margin: auto;
+
+          & > path {
+            fill: var(--icon-color);
           }
         }
       }
