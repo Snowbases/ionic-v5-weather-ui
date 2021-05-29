@@ -1,0 +1,91 @@
+ion-content {
+  --background: rgb(15, 17, 15);
+  --keyboard-offset: 0px;
+  --offset-bottom: 0px;
+  --offset-top: 0px;
+  --padding-bottom: 0px;
+  --padding-end: 0.5em;
+  --padding-start: 0.5em;
+  --padding-top: 0px;
+
+  ion-header {
+    ion-toolbar {
+      --background: rgb(15, 17, 15);
+      --min-height: 10vh;
+      --opacity: 1;
+      --padding-bottom: 4px;
+      --padding-end: 4px;
+      --padding-start: 4px;
+      --padding-top: 4px;
+
+      ion-title {
+        --color: rgb(255, 255, 255);
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: bold;
+      }
+    }
+  }
+
+  ion-card {
+    --background: #4f5849;
+    width: auto;
+    height: 18vh;
+    padding: 0 4vw;
+
+    .fluid-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      justify-items: center;
+
+      .wrapper-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        width: 80vw;
+  
+        ion-label.country {
+          color: rgb(255, 255, 255);
+          font-family: "Nunito Sans";
+          font-size: 2em;
+          font-style: normal;
+          font-weight: normal;
+          letter-spacing: 1px;
+          line-height: 1em;
+        }
+  
+        ion-label.temperature {
+          color: rgb(255, 255, 255);
+          font-family: "Nunito Sans";
+          font-size: 2em;
+          font-style: normal;
+          font-weight: normal;
+          letter-spacing: 1px;
+        }
+  
+        ion-label.weather-state {
+          color: rgb(255, 255, 255);
+          font-family: "Nunito Sans";
+          font-size: 1.2em;
+          font-style: normal;
+          font-weight: normal;
+          letter-spacing: 1px;
+        }
+      }
+  
+      .wrapper-icon {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        width: 20vw;
+  
+        img.weather-state {
+          width: 20vw;
+          height: 20vw;
+        }
+      }
+    }
+  }
+}

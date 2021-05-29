@@ -13,8 +13,8 @@ ion-content {
     &.country {
       .wrapper-arrow {
         display: flex;
-        justify-content: center;
         flex-direction: column;
+        justify-content: center;
 
         ion-button {
           --background: transparent;
@@ -30,9 +30,9 @@ ion-content {
           --border-radius: 100%;
           --border-style: solid;
           --border-color: transparent;
-          margin: 0;
           width: 15vw;
           height: 15vw;
+          margin: 0;
 
           svg.arrow {
             width: 10vw;
@@ -48,26 +48,26 @@ ion-content {
 
       .wrapper-country {
         display: flex;
-        justify-content: center;
         flex-direction: column;
+        justify-content: center;
         padding-left: 0.5em;
 
         .title {
+          color: var(--font-color);
           font-family: "Nunito Sans";
+          font-size: 6vw;
           font-style: normal;
           font-weight: normal;
-          font-size: 6vw;
           letter-spacing: 1px;
-          color: var(--font-color);
         }
 
         .last-updated {
+          color: var(--font-color);
           font-family: "Nunito Sans";
+          font-size: 4.5vw;
           font-style: normal;
           font-weight: normal;
-          font-size: 4.5vw;
           line-height: 17px;
-          color: var(--font-color);
           opacity: 0.8;
         }
       }
@@ -75,37 +75,37 @@ ion-content {
 
     &.temperature {
       display: flex;
-      justify-content: center;
       flex-direction: row;
+      justify-content: center;
 
       .wrapper-temperature {
-        padding: 0 1em;
         width: 50vw;
+        padding: 0 1em;
 
         .celcius {
+          color: var(--font-color);
           font-family: "Nunito Sans";
+          font-size: 14vw;
           font-style: normal;
           font-weight: normal;
-          font-size: 14vw;
-          color: var(--font-color);
           white-space: nowrap;
         }
 
         .celcius-details {
+          color: var(--font-color);
           font-family: "Nunito Sans";
+          font-size: 5vw;
           font-style: normal;
           font-weight: normal;
-          font-size: 5vw;
-          color: var(--font-color);
           white-space: nowrap;
         }
       }
 
       .wrapper-cloud {
-        width: 50vw;
-        justify-content: center;
         display: flex;
+        justify-content: center;
         justify-items: center;
+        width: 50vw;
 
         img {
           width: 20vw;
@@ -117,17 +117,17 @@ ion-content {
 
   .slider-wrapper {
     position: absolute;
-    width: 100%;
     bottom: 5vh;
+    width: 100%;
 
     ion-slides {
       width: 100%;
-      padding: 2% 5%;
       margin: auto;
+      padding: 2% 5%;
 
       ion-slide {
-        padding: 8px;
         margin: auto;
+        padding: 8px;
 
         ion-thumbnail {
           display: flex;
@@ -141,13 +141,13 @@ ion-content {
           }
 
           ion-label {
+            color: var(--font-color);
             font-family: "Nunito";
+            font-size: 4vw;
             font-style: normal;
             font-weight: 700;
-            font-size: 4vw;
-            color: var(--font-color);
-            overflow-wrap: normal;
             white-space: nowrap;
+            overflow-wrap: normal;
           }
         }
       }
@@ -155,8 +155,8 @@ ion-content {
 
     .navigation {
       display: flex;
-      justify-content: center;
       flex-direction: row;
+      justify-content: center;
 
       ion-button {
         --background: transparent;
@@ -172,9 +172,9 @@ ion-content {
         --border-radius: 100%;
         --border-style: solid;
         --border-color: transparent;
-        margin: 0.7em;
         width: 15vw;
         height: 15vw;
+        margin: 0.7em;
 
         svg.factory {
           width: 10vw;

@@ -44,7 +44,7 @@
       </ion-slide>
     </ion-slides>
     <div class="navigation">
-      <ion-button slot="start">
+      <ion-button (click)="showFactoryModal()" slot="start">
         <ion-ripple-effect type="unbounded"></ion-ripple-effect>
         <svg version="1.1" class="factory" id="factory" fill="none" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2000 2000" xml:space="preserve">
@@ -55,7 +55,7 @@
 	V1515.9z M1786.1,1211.2H1583V982.8h203.1V1211.2z" />
         </svg>
       </ion-button>
-      <ion-button slot="start">
+      <ion-button (click)="showSettingsModal()" slot="start">
         <ion-ripple-effect type="unbounded"></ion-ripple-effect>
         <svg version="1.1" class="settings" id="settings" fill="none" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2000 2000" xml:space="preserve">

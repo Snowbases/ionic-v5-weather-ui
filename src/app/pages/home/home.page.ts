@@ -1,12 +1,15 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import * as moment from 'moment';
+import { ModalController, AnimationController } from '@ionic/angular';
+import { FactoryComponent } from '../../components/factory/factory.component';
+import { SettingsComponent } from '../../components/settings/settings.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements AfterViewInit {
+export class HomePage {
   @ViewChild('country', { read: ElementRef, static: false }) countryElementRef: ElementRef;
   @ViewChild('temperature', { read: ElementRef, static: false }) temperatureElementRef: ElementRef;
   @ViewChild('weatherWeek', { read: ElementRef, static: false }) weatherWeekElementRef: ElementRef;
@@ -34,10 +37,11 @@ export class HomePage implements AfterViewInit {
   };
 
   constructor(
-
+    public modalController: ModalController,
+    public animationController: AnimationController,
   ) { }
 
-  async ngAfterViewInit() {
+  async ionViewWillEnter() {
     const weatherWeekLists = [{
       icon: 'assets/icon/cloud-plain.svg',
       weather_state: 'Clouds',
@@ -108,4 +112,35 @@ export class HomePage implements AfterViewInit {
     this.todayWeatherDetails.push(...todayWeatherDetails);
   }
 
+  async showFactoryModal() {
+    const modal = await this.modalController.create({
+      component: FactoryComponent,
+      cssClass: "factory-modal",
+      backdropDismiss: true,
+      mode: "ios"
+    });
+
+    modal.onDidDismiss().then(data => {
+      if (data["data"] != null) {
+        console.log(data);
+      }
+    });
+    await modal.present();
+  }
+
+  async showSettingsModal() {
+    const modal = await this.modalController.create({
+      component: SettingsComponent,
+      cssClass: "settings-modal",
+      backdropDismiss: false,
+      mode: "ios"
+    });
+
+    modal.onDidDismiss().then(data => {
+      if (data["data"] != null) {
+        console.log(data);
+      }
+    });
+    await modal.present();
+  }
 }

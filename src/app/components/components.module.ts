@@ -5,6 +5,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { AspectRatioComponent } from './aspect-ratio/aspect-ratio.component';
 import { ImageShellComponent } from './image-shell/image-shell.component';
+import { FactoryComponent } from './factory/factory.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   imports: [
@@ -14,11 +16,15 @@ import { ImageShellComponent } from './image-shell/image-shell.component';
   ],
   declarations: [
     AspectRatioComponent,
-    ImageShellComponent
+    ImageShellComponent,
+    FactoryComponent,
+    SettingsComponent
   ],
   exports: [
     AspectRatioComponent,
-    ImageShellComponent
+    ImageShellComponent,
+    FactoryComponent,
+    SettingsComponent
   ],
   entryComponents: [],
 })

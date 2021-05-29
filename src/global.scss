@@ -32,3 +32,12 @@
 ion-content.home-background {
   --background: url(./assets/background_plain.svg) no-repeat 52% center/cover;
 }
+
+.factory-modal {
+  .modal-wrapper {
+    width: 100vw;
+    height: 100vh;
+    border-color: transparent;
+    box-shadow: none;
+  }
+}
