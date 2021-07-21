@@ -1,4 +1,4 @@
-# Weather-UI-Ionic-5
+# ionic-v5-weather-ui
 
 This project currently is work in progress. 
 Any contribution is welcome
